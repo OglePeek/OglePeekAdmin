@@ -1,0 +1,360 @@
+.page-container {
+  padding: 32px;
+}
+
+.detail-breadcrumb {
+  margin-bottom: 20px;
+}
+
+.back-link {
+  color: var(--text-light);
+  font-size: 14px;
+  transition: color 0.15s;
+}
+
+.back-link:hover {
+  color: var(--text);
+}
+
+/* Detail Card */
+.detail-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.detail-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  gap: 12px;
+}
+
+.detail-card-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Product info grid */
+.product-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  padding: 0;
+}
+
+.info-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+
+.info-field:nth-child(3n) {
+  border-right: none;
+}
+
+.info-field--full {
+  grid-column: 1 / -1;
+  border-right: none;
+}
+
+.info-field:last-child,
+.info-field--full:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-light);
+}
+
+.info-value {
+  font-size: 14px;
+  color: var(--text);
+}
+
+/* Table */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th {
+  background: #f8f7f4;
+  padding: 11px 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text);
+  vertical-align: middle;
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tbody tr:hover td {
+  background: #fafaf8;
+}
+
+/* Action buttons */
+.action-btns {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-primary {
+  padding: 9px 18px;
+  background: var(--text);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+
+.btn-primary:hover:not(:disabled) {
+  opacity: 0.82;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  padding: 9px 18px;
+  background: var(--white);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: #f5f4f0;
+  border-color: #ccc;
+}
+
+.btn-outline:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-danger {
+  padding: 9px 18px;
+  background: var(--danger);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 0.15s;
+}
+
+.btn-danger:hover {
+  opacity: 0.85;
+}
+
+.btn-sm {
+  padding: 5px 12px;
+  font-size: 13px;
+}
+
+/* Empty state */
+.empty-state {
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 24px;
+}
+
+.modal-card {
+  background: var(--white);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  z-index: 1;
+}
+
+.modal-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: var(--text-light);
+  padding: 4px 8px;
+  border-radius: var(--radius);
+  transition: background 0.15s, color 0.15s;
+}
+
+.modal-close:hover {
+  background: #f5f4f0;
+  color: var(--text);
+}
+
+.modal-form {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 8px;
+}
+
+/* Form fields */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 14px;
+  color: var(--text);
+  background: var(--white);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: #999;
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.form-error {
+  background: #fdf2f2;
+  border: 1px solid #f5c6c6;
+  color: var(--danger);
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  font-size: 13px;
+}
+
+.file-count {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+
+/* Skeleton */
+.skeleton {
+  background: linear-gradient(90deg, #f0efe9 25%, #e8e6df 50%, #f0efe9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton-title-bar {
+  height: 28px;
+  width: 260px;
+  margin-bottom: 24px;
+}
+
+.skeleton-info-card {
+  height: 280px;
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.skeleton-variants {
+  height: 200px;
+  width: 100%;
+  border-radius: 6px;
+}

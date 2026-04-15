@@ -343,24 +343,39 @@ export default function ProductDetail() {
             <table className="data-table">
               <thead>
                 <tr>
+                  <th>Images</th>
                   <th>Color</th>
                   <th>Price</th>
                   <th>In Stock</th>
                   <th>Reserved</th>
                   <th>Size</th>
-                  <th>Images</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {variants.map(variant => (
                   <tr key={variant._id}>
+                    <td>
+                      <div className="variant-thumbs">
+                        {variant.images && variant.images.length > 0 ? (
+                          variant.images.map((url, i) => (
+                            <img
+                              key={i}
+                              src={url}
+                              alt={`${variant.frameColor || 'variant'} ${i + 1}`}
+                              className="variant-thumb"
+                            />
+                          ))
+                        ) : (
+                          <span className="no-images">No images</span>
+                        )}
+                      </div>
+                    </td>
                     <td>{variant.frameColor || '-'}</td>
                     <td>NPR {Number(variant.price || 0).toLocaleString('en-IN')}</td>
                     <td>{variant.inStock ?? '-'}</td>
                     <td>{variant.reserved ?? 0}</td>
                     <td>{variant.size || '-'}</td>
-                    <td>{variant.images ? variant.images.length : 0}</td>
                     <td>
                       <div className="action-btns">
                         <button
